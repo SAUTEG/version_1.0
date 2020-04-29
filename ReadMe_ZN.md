@@ -9,7 +9,7 @@
 
 ```
 
-# SAUTAG 
+# SAUTAG 中文文档
 ![SAUTEG.Oryza sativa L](DataSet.jpg)
 
 >数据集图片展示
@@ -36,7 +36,7 @@ SATEG
 │      ├─!Ancyllomia japonica zeller
 │      ├─Aleurocybotus indicus David et Subramaniam
 │      ├─Ampullaria gigas Spix
-└─Sample               //此文件夹用于存放优化后的该作物的病虫害训练样本
+└─Sample               //此文件夹用于存放优化后的病虫害训练样本（可快速用于训练模型）
    └─Oryza sativa L.Pests     //其中的一个训练样本,分号分割作物种类和样本类型(这里代表该优化训练样本为Oryza sativa L的Pests)
         ├─test                //这里是测试数据集文件夹
         │  ├─Aleurocybotus indicus David et Subramaniam
@@ -81,7 +81,7 @@ SATEG
 ### version_1.0
 
 + 更新了水稻病虫害;
-+ 在`Sample`文件夹加入了Oryza sativa L.Pests训练样本
++ 在`Sample`文件夹加入了Oryza sativa L.Pests训练样本。
 
 ## 上传须知
 
@@ -108,6 +108,6 @@ SATEG
 
 >例如改变了默认的训练样本文档目录结构或采用了特殊的数据集处理方式
 
-## 特别说明
+## 版权说明
 
-&emsp;&emsp;旨在提供一个公开化的农业病虫害图像数据集收集平台,项目数据集图片版权归原作者,如有侵权请联系我们删除。
+&emsp;&emsp;SAUTEG旨在提供一个公开化的农业病虫害图像数据集收集平台。项目数据集图片版权归原作者,如有侵权请联系我们删除。本项目数据仅供研究等非商业用途，不承担任何组织和个人商用导致侵权的法律责任。

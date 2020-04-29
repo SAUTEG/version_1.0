@@ -9,105 +9,113 @@
 
 ```
 
-# SAUTAG 
-![SAUTEG.Oryza sativa L](//DataSet.jpg)
+# SAUTAG English Document
 
->数据集图片展示
+![SAUTEG.Oryza sativa L](DataSet.jpg)
 
-## 项目说明
+>Dataset picture display
 
-&emsp;&emsp;SAUTEG为公开化农业病虫害图像数据集，项目旨在提供一个公开化的农业病虫害图像数据集收集平台。
+## Project Introduction
 
-## 使用说明
+&emsp;SAUTEG is an open agricultural pest and disease image dataset, and the project aims to provide an open agricultural pest and disease image dataset collection platform.
 
-使用项目前应先了解数据集文件结构
+## Operating Instruction
 
-### 目录结构
+You should understand the dataset file structure before using the project
+
+### Directory Structure
 
 ```
-//涉及的作物种类名、虫害名、病害名应该优先使用拉丁学名
+//The names of crop species, pests and diseases involved should be given priority to Latin scientific names
 SATEG
-├─Oryza sativa L        //涉及作物种类的拉丁学名
-│  ├─Diseases           //此文件夹用于存放该作物的病害数据集
-│  │  ├─!Phytophthora fragariae Hickm.var.oryzo-bladis Wang et Lu    //当样本数量过少应在样本前加"!"符号
+├─Oryza sativa L        //Latin scientific name for a crop species
+│  ├─Diseases           //This folder is used to hold the diseases dataset of the crop
+│  │  ├─!Phytophthora fragariae Hickm.var.oryzo-bladis Wang et Lu    //"!"The sign indicates that there are not enough samples
 │  │  ├─Entyloma oryzae Syd
 │  │  └─Fusarium moniliforme Sheld
-│  └─Pests             //此文件夹用于存放该作物的虫害数据集
+│  └─Pests             //This folder is used to hold the Pets dataset of the crop
 │      ├─!Ancyllomia japonica zeller
 │      ├─Aleurocybotus indicus David et Subramaniam
 │      ├─Ampullaria gigas Spix
-└─Sample               //此文件夹用于存放优化后的该作物的病虫害训练样本
-   └─Oryza sativa L.Pests     //其中的一个训练样本,分号分割作物种类和样本类型(这里代表该优化训练样本为Oryza sativa L的Pests)
-        ├─test                //这里是测试数据集文件夹
+└─Sample               //This folder is used to store the optimized pest and disease training samples
+   └─Oryza sativa L.Pests     //One of the training samples,semi-colon separated crop species and sample type
+        ├─test                //This is the test dataset folder
         │  ├─Aleurocybotus indicus David et Subramaniam
         │  └─Ampullaria gigas Spix
-        |─train               //这里是训练数据集文件夹
+        |─train               //This is the train dataset folder
         |   ├─Aleurocybotus indicus David et Subramaniam
         |   └─Ampullaria gigas Spix
-        └─README             //该训练样本的说明文档，当对数据集进行特殊处理后（例如改变了默认的训练样本文档目录结构），应在这里进行说明
+        └─README             //The documentation for the training sample should be described here when the dataset has been specially processed.
+                             // For example by changing the default directory structure of the training sample document
                               
 ```
 
-+ 涉及的作物种类名、虫害名、病害名为**拉丁学名**
-+ 文件夹名前`!`代表样本数量过少<br>
-例如:<br>
-`!Phytophthora fragariae Hickm.var.oryzo-bladis Wang et Lu //该样本数量不足`
-+ 根目录下作物拉丁学名的文件夹包含该作物的原始数据，内有`Diseases`存放病害数据和`Pets`存放虫害数据
-+ `Diseases`和`Pets`文件夹内的数据应以拉丁学名为文件夹分类存储
-+ 文件夹名的`&`连接不同种类数据,里面存取的是相似的病害和虫害<br>
-例如:<br>
-`Cletus punctiger&Clketus trigonus //该文件夹存有两种相识虫害`
->在使用该方式时,种类有极大相似性,在防治角度没有分开的必要性
++ The names of crop species, pests and diseases involved should be given priority to **Latin scientific names**.
++ Folder name before `!` represents too few samples. <br>
+Such as:<br>
+`!Phytophthora fragariae Hickm.var.oryzo-bladis Wang et Lu //The sample is insufficient`
++ The folder of the Latin name of the crop in the root directory contains the original data of the crop, with `Diseases` holding the disease data and `Pets` holding the pest data.
++ Data in the `Diseases` and `Pets` folders should be classified as folders under Latin names.
++ The folder name `&` connects different kinds of data, which access similar diseases or pests. <br>
+Such as:<br>
+`Cletus punctiger&Clketus trigonus //This folder holds two types of familiar pests`
+>In the use of this method, species have great similarity, there is no need to separate in the prevention view.
 
-+ 部分文件夹拉丁学名超过**GitHub最大长度**时,使用了首字母缩写格式,在对应根目录有`README`文件进行了说明<br>
-例如:<br>
-`H.S.2F.M为5种相识种类合并后导致的文件夹名过长,使用缩写形式,在根目录建立`README`文件进行说明`
-+ `Sample`文件夹存储可以直接可以用于训练的样本，样本文件夹名采用`作物名.类别`的命名方式
-+ 样本文件夹根目录可能有`README`文件，对数据集进行进行说明
++ When the Latin name of some folders exceeds **the maximum length of GitHub**, the use of the acronym format, in the corresponding root directory has `README` file to explain. <br>
+Such as:<br>
+`H.S.2F.M` <br>
+*The name of the folder that is too long after the merging of 5 kinds of acquaintance.Using the abbreviation form, create the `README` file in the root directory to explain.*
++ The `Sample` folder stores samples that can be used for training directly. The Sample folder name adopts the naming method of `cropName. Category`
++ The sample folder root may have a `README` file that describes the dataset sample
 
-### 快速上手
+### Manual
 
-#### 极速开始
+#### Quick Start
 
-&emsp;&emsp;如果你想快速搭建你的识别模型,只需按需在`Sample`文件夹找到预先设计过数据集,数据集已按照`作物名.类别`的命名方式对样本的数据类型说明。（文件夹中可能有`README`文件对样本详细情况进行说明）
+&emsp;If you want to quickly build your recognition model, just find the pre-designed dataset in the `Sample` folder as needed, and the dataset has been named according to the `cropName. Category`.<br>
+>*There may be a `README` file in the folder that explains the sample details*
 
-#### 原始数据
+#### Original Data
 
-&emsp;&emsp;原始数据在数据集根目录下以作物拉丁学名为文件夹存放，内有`Diseases文件夹`存放病害数据和`Pets文件夹`存放虫害数据。
+&emsp;The original data is stored in the root directory of the dataset with the crop Latin scientific name as the folder, and the `Diseases` folder holds the disease data and the `Pets` folder holds the pest data.
 
 
-## 版本更新
+## Version History 
 
 ### version_1.0
 
-+ 更新了水稻病虫害;
-+ 在`Sample`文件夹加入了Oryza sativa L.Pests训练样本
++ updated rice pests and diseases.
++ Oryza sativa L.Pests training samples were added to the `Sample` folder.
 
-## 上传须知
+## Upload Rules
 
-你可以对项目数据进行上传和修改，完善数据集、上传你的数据集或你精心设计过的训练样本。
+You can upload and modify the project data, perfect the dataset, upload your dataset, or upload your carefully designed training sample.
 
-上传需**按照目录结构要求**并**遵守以下规则**:
-1. 涉及的作物种类名、虫害名、病害名应该优先使用**拉丁学名**
-2. 样本数量过少应在样本文件夹前加`!`符号<br>
-例如:<br>
-`!Phytophthora fragariae Hickm.var.oryzo-bladis Wang et Lu //该样本数量不足`
-3. 根目录下作物拉丁学名的文件夹应包含该作物的原始数据，内有`Diseases`存放病害数据和`Pets`存放虫害数据
- `Diseases`和`Pets`文件夹内的数据应以拉丁学名为文件夹分类存储
-4. 可以使用一个文件夹存取几种相似的病害和虫害,不同种类拉丁学名应用`&`分割<br>
-例如:<br>
-`Cletus punctiger&Clketus trigonus //该文件夹存有两种相识虫害`
+Upload must according to **the directory structure requirements** and comply with **the following rules**:
 
->在使用该方式时,应保证种类应有极大相似性,在防治角度没有分开的必要性
+1. Priority should be given to **Latin scientific name** for the names of crop species, pests and diseases involved.
 
-5. 当文件夹拉丁学名超过**GitHub最大长度**时,可以使用首字母缩写格式,应在对应根目录建立`README`文件进行说明<br>
-例如:<br>
-`H.S.2F.M为5种相识种类合并后导致的文件夹名过长,使用缩写形式,在根目录建立`README`文件进行说明`
-6. `Sample`文件夹存储可以直接可以用于训练的样本，样本文件夹名采用“作物名.类别”的命名方式
-7. 样本文件夹根目录可建立`README`文件，对数据集进行进行说明
+2. If the sample quantity is too small, `!`should be added before the sample folder.<br>
+For example:<br>
+`!Phytophthora fragariae Hickm.var.oryzo-bladis Wang et Lu //The sample is insufficient`
 
->例如改变了默认的训练样本文档目录结构或采用了特殊的数据集处理方式
+3. The folder with the Latin scientific name of the crop in the root directory should contain the original data of the crop, with `Diseases` for disease data and `Pets` for pest data.Data in the `Diseases` and `Pets` folders should be classified as folders under Latin names.
 
-## 特别说明
+4. You can use a folder to access several similar diseases and pests, different kinds of Latin scientific name application `&` division.<br>
+For example: <br>
+`Cletus punctiger&Clketus trigonus //This folder holds two types of familiar pests`
+>In the use of this method, species have great similarity, there is no need to separate in the prevention view.
 
-&emsp;&emsp;旨在提供一个公开化的农业病虫害图像数据集收集平台,项目数据集图片版权归原作者,如有侵权请联系我们删除。
+5. When the Latin name of the folder exceeds **GitHub's maximum length**, you can use the acronym format, should be in the corresponding root directory to create a `README` file to explain.<br>
+For example: <br>
+`H.S.2F.M` <br>
+*The name of the folder that is too long after the merging of 5 kinds of acquaintance.Using the abbreviation form, create the `README` file in the root directory to explain.*
+
+6. `Sample` folder stores samples that can be directly used for training, and the Sample folder name adopts the naming method of `cropName. Category`.
+
+7. The `README` file can be created in the root directory of the sample folder to explain the dataset.<br>
+&emsp;For example,changed the default directory structure of the training sample document or adopted a special dataset processing method.
+
+## Copyright 
+
+&emsp;SAUTEG aims to provide a public collection platform for agricultural pest and disease image datasets.The copyright of the project dataset is returned to the original author. If there is any infringement, please contact us to delete.The data of this project is only for research and other non-commercial purposes, and it shall not bear any legal liability for infringement caused by commercial use of any organization or individual.
